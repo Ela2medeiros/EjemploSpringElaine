@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelife.org">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="ISO-8859-1">
+		<title>Departamentos</title>
+		<link  href="css/bootstrap.css" rel= "stylesheet" th:href="@{css/bootstrap.css}"/>
+		<link  href="css/bootstrap-table.css" rel= "stylesheet" th:href="@{css/bootstrap-table.css}"/>
+		<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+		<script type="text/javascript" src="js/departments.js"></script>
+	</head>
+	
+	<body>
+			
+		<script> type="text/javascript"
+			document.addEventListener("DOMContentLoaded", function(event) {
+				$.ajax({
+					type : "post",
+					url : "/departments/list",
+					success : function(response){
+						$("#departmentsTable").bootstrapTable('load',response);
+					}
+				});
+			});
+		</script>
+		
+		<div th:replace="fragments/header :: header-head"></div>
+		<div class="container">
+			<div class="painel painel-default">
+				<div class="painel body">
+				<h2>Mantención de Departamentos</h2>
+				<div class="table-responsive" id="tableDivContainer">  <!-- data-toggle > Tabla usar datos -->
+					<table class="table table-condensed" id="departmentsTable" data-toggle="table">
+						<thead>
+							<tr>
+								<th data-field="dept_no">Nº</th> 
+								<th data-field="dept_name">Nombre</th>
+							</tr>
+						</thead>
+					</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<script type="text/javascript" src="/js/bootstrap.js"></script>
+		<script type="text/javascript" src="/js/bootstrap-table.js"></script>
+	
+	</body>
+</html>

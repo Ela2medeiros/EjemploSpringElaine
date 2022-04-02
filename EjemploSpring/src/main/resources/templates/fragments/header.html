@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelife.org">
+	<head>
+	<meta charset="ISO-8859-1">
+	<link href="css/bootstrap.css" rel="stylesheet" th:href="@{css/bootstrap.css}"/>
+	</head>
+	
+	<body>
+	
+	<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+ 	<script type="text/javascript" src="js/bootstrap.js"></script>
+		
+		<div class="container" th:fragment="header-head">
+			<div class="container-fluid" style="background-color: steelblue; color:#fff; height:100%;">
+			<h2><strong>Mantenedor</strong></h2>
+			</div>
+		</div>
+				
+		<div class="btn-group" th:fragment="header-btn">
+			<button type="button" class="btn btn-success">Departamento</button>
+			<button type="button" class="btn btn-secondary">Emplegado</button>
+		</div>
+	
+	</body>
+</html>
